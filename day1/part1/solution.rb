@@ -3,7 +3,7 @@ require_relative './elf.rb'
 class Solution
   attr_reader :input, :elves, :maximum_calories_carried
 
-  def initialize()
+  def initialize
     @input = File.read('input.txt')
     @elves = []
   end
