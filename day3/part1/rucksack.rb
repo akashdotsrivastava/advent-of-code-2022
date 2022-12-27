@@ -15,14 +15,8 @@ class Rucksack
   end
 
   def get_common_item_in_compartments
-    common_item = nil
-    compartment_1.items.each do |item|
-      if compartment_2.items.map(&:value).include?(item.value)
-        common_item = item
-        break
-      end
-    end
-    common_item
+    common_value_in_compartments = (compartment_1.items_list & compartment_2.items_list).first
+    compartment_1.items.find { |item| item.value == common_value_in_compartments }
   end
 
   private
